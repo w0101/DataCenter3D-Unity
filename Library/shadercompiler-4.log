@@ -1,0 +1,15 @@
+Base path: D:/unity/Data
+Pipe name: \\.\pipe\UnityShaderCompiler-4-2000
+Cmd: getPlatforms
+Cmd: compileSnippet
+  api=8 type=1 insize=841 outsize=1105 kw= ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=1310 outsize=2103 kw= ok=1
+Cmd: compileSnippet
+  api=8 type=0 insize=1346 outsize=2438 kw= ok=1
+Cmd: compileSnippet
+  api=8 type=1 insize=1346 outsize=1885 kw= ok=1
+Unhandled exception: Readfile from pipe failed. GLE=管道已结束。
+
+
+Quitting shader compiler process
