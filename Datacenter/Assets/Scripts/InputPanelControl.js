@@ -1,15 +1,12 @@
 ﻿#pragma strict
 
 var InputArr : GameObject[];
+var defaultValues : UILabel[];
+private var panel : UIPanel; 
 private var addCabURL : String = "localhost:8080/DataCenter/serverCabinet!add";
 function Start(){
-	var CapacityInput : GameObject = GameObject.Find("Window Panel/Capacity/Input Field");
-	var input : UIInput;
-	if(CapacityInput != null){
-		input = CapacityInput.GetComponent("UIInput");
-		input.isSelected = true;
-	}
-
+	panel = gameObject.GetComponent("UIPanel"); 
+	cancle();
 }
 //on every input box submit
 function onSubmit(source : GameObject){
@@ -39,6 +36,7 @@ function onSubmit(source : GameObject){
 		}
 		
 	}
+	//yield WaitForSeconds (1);
 }
 
 //on input panel submit
@@ -47,8 +45,20 @@ function submit(){
 
 }
 function cancle(){
-	var panel : UIPanel = gameObject.GetComponent("UIPanel");
 	panel.alpha = 0;
+}
+function show(row : float, rack : float, type : String) {
+	panel.alpha = 1;
+	defaultValues[0].text = row + '';
+	defaultValues[1].text = rack + '';
+	defaultValues[2].text = type;
+	var CapacityInput : GameObject = InputArr[0];
+	//Debug.Log(CapacityInput);
+	var input : UIInput;
+	if(CapacityInput != null){
+		input = CapacityInput.GetComponent("UIInput");
+		input.isSelected = true;
+	}
 }
 function addCabInfo(){
 	
@@ -59,11 +69,11 @@ function addCabInfo(){
 	var rowObj : UILabel = GameObject.Find("Window Panel/Row/Input Field/Label").GetComponent("UILabel");
 	var rackObj : UILabel = GameObject.Find("Window Panel/Rack/Input Field/Label").GetComponent("UILabel");
 	var typeObj : UILabel = GameObject.Find("Window Panel/Type/Input Field/Label").GetComponent("UILabel");
-	var capacityObj : GameObject = GameObject.Find("Window Panel/Capacity/Input Field");
-	var limitpowerObj : GameObject = GameObject.Find("Window Panel/LimitPower/Input Field");
-	var actualpowerObj : GameObject = GameObject.Find("Window Panel/ActualPower/Input Field");
-	var limitweightObj : GameObject = GameObject.Find("Window Panel/LimitWeight/Input Field");
-	var actualweightObj : GameObject = GameObject.Find("Window Panel/ActualWeight/Input Field");
+	var capacityObj : GameObject = InputArr[0];
+	var limitpowerObj : GameObject = InputArr[1];
+	var actualpowerObj : GameObject = InputArr[2];
+	var limitweightObj : GameObject = InputArr[3];
+	var actualweightObj : GameObject = InputArr[4];
 	var elemethodObj : GameObject = GameObject.Find("Window Panel/EleMethod/Input Field"); 
 	var infoObj : GameObject = GameObject.Find("Window Panel/Info/Text Box/");
 	

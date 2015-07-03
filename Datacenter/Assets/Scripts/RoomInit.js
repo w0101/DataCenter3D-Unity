@@ -5,7 +5,7 @@ var cabModel : GameObject[];
 var floor : GameObject;
 
 var cabSize : Vector3 = new Vector3(0.8,2,1);
-private var room : int;
+private var room : int = 161;
 //private var mousePos : Vector3;
 private var roomWidth : float = 0;
 private var roomDepth : float = 0;
@@ -20,7 +20,7 @@ function setRoom(roomId : int){
 function Start () {
 
 	//request serverroom data
-	var requestData : WWW;
+	/*var requestData : WWW;
 	requestData = WWW(url);
 	yield requestData;
 	
@@ -78,6 +78,6 @@ function Start () {
 		cabs[cabLen].transform.parent = parentObj;
 		cabLen++;
 
-	}
+	}*/
 }
 
